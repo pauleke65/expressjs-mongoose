@@ -1,5 +1,5 @@
 {
-  "name": "expressjs-mongoose-1",
+  "name": "expressjs-mongoose",
   "private": true,
   "version": "1.0.0",
   "main": "index.js",
