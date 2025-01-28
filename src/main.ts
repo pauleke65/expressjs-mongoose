@@ -140,25 +140,11 @@
 
 import { generateData } from './gen-data';
 import './gen-data/db';
-
-const fs = require('fs');
-const path = require('path');
+import { uniqueAddresses } from './unique_addresses';
 
 // Path to the existing 'unique_addresses.json' file
 
 export async function main() {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
-  const filePath = path.join(__dirname, 'unique_addresses.json');
-
-  // Read the JSON file
-  let uniqueAddresses;
-  try {
-    const data = fs.readFileSync(filePath, 'utf8');
-    uniqueAddresses = JSON.parse(data);
-  } catch (err) {
-    console.error('Error reading the JSON file:', err);
-  }
-
   // Count the number of unique addresses
   console.log('Starting to generate data for unique addresses...');
   for (let i = 0; i < uniqueAddresses.length; i++) {
