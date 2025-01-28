@@ -1,4 +1,4 @@
-import './lib/db';
+// import './lib/db';
 import express from 'express';
 import countryRoutes from './routes/country';
 import { main } from './main';
