@@ -152,7 +152,7 @@ export async function main() {
     const res = await generateData(address);
     if (res) {
       console.log(
-        `Data generated for items ${i + 1} of ${uniqueAddresses.length}`,
+        `Data generated for items ${i + 1} of ${uniqueAddresses.length} - ${address}`,
       );
     } else {
       console.log(`Data not generated for address: ${address}`);
