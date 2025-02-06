@@ -179,9 +179,8 @@ export async function main() {
   await new Promise((resolve) => setTimeout(resolve, 10000));
   // Count the number of unique addresses
   console.log('Starting to generate data for unique addresses...');
-  for (let i = 11; i < generatedAddresses.length; i++) {
+  for (let i = 157; i < generatedAddresses.length; i++) {
     const address = generatedAddresses[i];
-    console.log(address);
     const res = await generateData(address);
     if (res) {
       console.log(

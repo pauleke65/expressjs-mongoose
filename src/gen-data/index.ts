@@ -219,10 +219,13 @@ export const generateData = async (address: string) => {
     icon: '',
     value: description,
   });
-
   const highestTransferToMe =
-    traits.singleSolTransfersToMe?.highestTransfer.nativeTransfers[0].amount ||
-    0;
+    (traits.singleSolTransfersToMe?.highestTransfer?.nativeTransfers.length ??
+      0) > 0
+      ? traits.singleSolTransfersToMe?.highestTransfer.nativeTransfers[0]
+          .amount || 0
+      : 0;
+
   const highestTransferFromMe =
     (traits.singleSolTransfersFromMe?.highestTransfer?.nativeTransfers.length ??
       0) > 0
