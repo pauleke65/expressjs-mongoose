@@ -10,7 +10,6 @@ export const generatedAddresses = [
   '38Mt9719BGnTbuqz9arybsazFr3BESzLB2VfvjVnna8k',
   '4pW1uLYFRrQEgEdgQ2g2mVKS5hT6zAK7ZtTYqHNM53SL',
   '4UiXBSVx8Bq1WoNKoLdJs4Vzh5W84wWQzB8n3zX6upQ9',
-  //STOP HERE
   '3CknksEVHW7tFNpxQmiEiBajUZ1ztRNP7gsBULKKkPFi',
   '9oJMrUFfWHnN9rQm5g7E1iHDvLGX4JoThXAR2pH1c6XX',
   '9uE4pnC9c6viwTtvyWhKMQrgwt6FFgTNwUEsvhc7Hb3',
