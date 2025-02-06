@@ -138,21 +138,56 @@
 
 // getUniqueAddresses();
 
+/////- -- -- /-/ -/ -/
+
+// const fs = require('fs');
+// const path = require('path');
+
+// function readTxtFileToArray(filePath: any) {
+//   try {
+//     const data = fs.readFileSync(filePath, 'utf8');
+//     const lines = data
+//       .split('\n')
+//       .map((line: string) => line.trim())
+//       .filter((line: string | any[]) => line.length > 0);
+//     return lines;
+//   } catch (error) {
+//     console.error(`Error reading file from path ${filePath}:`, error);
+//     return [];
+//   }
+// }
+
+// const filePath = path.join(__dirname, 'airdrop-addr.txt');
+// const addressesArray = readTxtFileToArray(filePath);
+// console.log('Addresses:', addressesArray);
+// console.log('Addresses:', addressesArray.length);
+
+// const newFilePath = path.join(__dirname, 'generated_addresses.ts');
+// const fileContent = `export const generatedAddresses = ${JSON.stringify(addressesArray, null, 2)};`;
+
+// fs.writeFileSync(newFilePath, fileContent);
+
+// console.log(`Generated addresses written to ${newFilePath}.`);
+
 import { generateData } from './gen-data';
 import './gen-data/db';
-import { uniqueAddresses } from './unique_addresses';
+import { generatedAddresses } from './generated_addresses';
 
 // Path to the existing 'unique_addresses.json' file
 
 export async function main() {
+  await new Promise((resolve) => setTimeout(resolve, 10000));
   // Count the number of unique addresses
   console.log('Starting to generate data for unique addresses...');
-  for (let i = 0; i < uniqueAddresses.length; i++) {
-    const address = uniqueAddresses[i];
+  for (let i = 11; i < generatedAddresses.length; i++) {
+    const address = generatedAddresses[i];
+    console.log(address);
     const res = await generateData(address);
     if (res) {
       console.log(
-        `Data generated for items ${i + 1} of ${uniqueAddresses.length} - ${address}`,
+        `Data generated for items ${i + 1} of ${
+          generatedAddresses.length
+        } - ${address}`,
       );
     } else {
       console.log(`Data not generated for address: ${address}`);
@@ -160,3 +195,5 @@ export async function main() {
   }
   console.log('Data generation for unique addresses completed.');
 }
+
+// main();
