@@ -115,7 +115,7 @@ export async function getTransactionsForYear(address: string): Promise<{
     allTransactions.push(...data);
   }
 
-  await storeUserTransactions(address, username!, allTransactions);
+  // await storeUserTransactions(address, username!, allTransactions);
 
   return {
     username,
